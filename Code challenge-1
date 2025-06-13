@@ -1,1 +1,98 @@
-Code challenge-1
+chai.js
+function calculateChaiIngerient() {
+    
+let userinput = prompt("Karibu! how many cups of chai would you like")
+let numberOfCups = Number(userinput)
+
+// validation
+if (isNaN(numberOfCups)|| numberOfCups<=0) {
+    console.log('Oops! enter a valid number of cups');
+    return;
+}
+
+// ingeriends quantities per cup
+const standardwaterInml = 200;
+const standardmilkInml = 50;
+const standardtealeavesinTsp = 1;
+const standardsugarinTsp = 2;
+ 
+// total quantities
+const totalwater = numberOfCups * standardwaterInml;
+const totalmilk = numberOfCups * standardmilkInml;
+const totaltealeaves = numberOfCups * standardtealeavesinTsp;
+const totalsugar = numberOfCups * standardsugarinTsp;
+
+// display the results 
+console.log(`${totalwater} ml of water`);
+console.log(`${totalmilk} ml of milk`);
+console.log (`${totaltealeaves} Tsp of tealeaves`);
+console.log (`${totalsugar} Tsp of sugar`);
+
+}
+
+
+calculateChaiIngerient();
+
+Fare.js
+function calculateBodaFare (distanceInkm) {
+const baseFare = 50;
+const chargePerkm =20;
+const totalFare =baseFare + (distanceInkm * chargePerkm)
+
+console.log(`foratrip of $ {distanceInkm} km, your estimatedbodafare is: ${totalFare}`);
+}
+
+//prompt the user for distance and convert to number
+ const userinput = prompt(`enter the distance of your trip in kilometers`);
+ const distance = Number(userinput); // Corrected line: convert the string to a number
+
+ // validation
+ if(isNaN(distance) || distance < 0){ // changed && to || as both make the input invalid
+    console.log("enter a valid distance in kilometers");
+ }
+ 
+ // Assuming calculateBodaFare excepts a distance arguement, // you should pass the `distance` variable to it.
+
+ calculateBodaFare();
+
+Fee.js
+function estimateTransactionFee() {
+    const welcomeMessage = prompt("Unatuma ngapi?(Enter amount in KSH")
+const amountToSend = Number (welcomeMessage);
+const minimumFee = 10;
+const maximumFee = 70;
+
+//condition tomake sure the amount keyed in is a valid positive number
+if (isNaN(amountToSend)|| amountToSend<=0){ // Corrected syntax
+    console.log(`oops! Please enter a valid number`);
+    return;
+}
+//information about transactions and their fees
+const basicTransactionFee = 1.5 * amountToSend / 100
+let finalFee;
+//validation condition for the maximum and minimum amount to send.
+
+if(basicTransactionFee < minimumFee){
+    //charge ksh10 if the transaction fee is less than 10
+    finalFee = minimumFee;
+    //return;
+
+} else if (basicTransactionFee>maximumFee){
+    finalFee = maximumFee;
+    //return;
+    //charge ksh70 if the transaction fee is more than 70
+} else{//therwise charge the transaction fee.
+    finalFee=basicTransactionFee;}
+
+    // variable to the amount of money to be debited 
+    const amountToBeDebited=amountToSend+finalFee;
+    //console output to the user
+    console.log("calculated transaction fee ksh${finalFee}");
+
+    console.log("total amount to be debited Ksh${finalFee}");
+
+    console.log("Send Money Securely!");
+
+}
+
+estimateTransactionFee();
